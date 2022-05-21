@@ -25,4 +25,28 @@ function getColors(length){
         backgroundColor:["1","2","3"],
       }],
     },
+    options: {
+      scales: {
+        xAxes: [{
+          time: {
+            unit: ''
+          },
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            maxTicksLimit: 0
+          }
+        }],
+        yAxes: [{
+          
+          gridLines: {
+            display: false
+          }
+        }],
+      },
+      legend: {
+        display: false
+      }
+    }
   });

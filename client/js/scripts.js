@@ -8,6 +8,11 @@
 
 {/* <canvas id="myPieChart" width="100%" height="50"></canvas> */}
 
+const myGraphContents = document.getElementById("myGraphContents");
+
+myGraphContents.style.display = "none";
+
+
 function AddColorData(chart){
     let total = chart.data.labels.length;
     var array = getColors(total);
@@ -52,6 +57,7 @@ function RemoveChartArray(chart) {
 document.getElementById("mySpinner").style.display = 'none'; 
 async function getir(){
 
+    myGraphContents.style.display = "none";
 
 
     // console.log(formType.value.toLocaleUpperCase()); //Form dosyasına girilen değerin upper case dönüşümünden sonraki halini yazdırır.
@@ -119,9 +125,19 @@ async function getir(){
             // AddData(myPieChart,mahsullerLabelArray,mahsulUretimMiktariArray);
     }
  setTimeout(() => {
-     document.getElementById("mySpinner").style.display = 'none'; 
-}, 1789);
+     document.getElementById("mySpinner").style.display = 'none';
+     myGraphContents.style.display = "block"; 
+}, 1000);
 
 
 
 }
+
+
+
+    var myModal = document.getElementById('exampleModal')
+    var myInput = document.getElementById('myInput')
+    
+    myModal.addEventListener('shown.bs.modal', function () {
+      myInput.focus()
+    })
